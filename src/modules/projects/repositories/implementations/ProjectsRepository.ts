@@ -26,7 +26,12 @@ class ProjectsRepository implements IProjectRepository {
     return projects;
   }
   async findById(id: string): Promise<Project> {
-    const project = await this.repository.findOne(id);
+    const project = await this.repository.findOne({
+      relations: ['navers'],
+      where: {
+        id,
+      },
+    });
     return project;
   }
   async removeById(id: string): Promise<void> {
