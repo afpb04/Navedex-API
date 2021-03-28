@@ -10,10 +10,11 @@ class ProjectsRepository implements IProjectRepository {
   constructor() {
     this.repository = getRepository(Project);
   }
-  async create({ name, user_id }: ICreateProjectDTO): Promise<Project> {
+  async create({ name, user_id, navers }: ICreateProjectDTO): Promise<Project> {
     const project = this.repository.create({
       name,
       user_id,
+      navers,
     });
     await this.repository.save(project);
 

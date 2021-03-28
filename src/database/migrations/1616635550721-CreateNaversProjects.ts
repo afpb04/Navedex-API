@@ -8,11 +8,11 @@ export default class CreateNaversProjects1616635550721
         name: 'navers_projects',
         columns: [
           {
-            name: 'navers_id',
+            name: 'naversId',
             type: 'varchar',
           },
           {
-            name: 'projects_id',
+            name: 'projectsId',
             type: 'varchar',
           },
         ],
@@ -21,7 +21,7 @@ export default class CreateNaversProjects1616635550721
             name: 'fk_navers',
             referencedTableName: 'navers',
             referencedColumnNames: ['id'],
-            columnNames: ['navers_id'],
+            columnNames: ['naversId'],
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           },
@@ -29,7 +29,7 @@ export default class CreateNaversProjects1616635550721
             name: 'fk_projects',
             referencedTableName: 'projects',
             referencedColumnNames: ['id'],
-            columnNames: ['projects_id'],
+            columnNames: ['projectsId'],
             onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
           },
