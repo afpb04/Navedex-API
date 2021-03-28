@@ -1,5 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
+import Project from '../../../projects/entities/Project';
 import Naver from '../../entities/Naver';
 import INaversRepository from '../../repositories/INaversRepository';
 
@@ -9,6 +10,7 @@ interface IRequest {
   admission_date: Date;
   job_role: string;
   user_id: string;
+  projects: Project[];
 }
 
 @injectable()
@@ -23,6 +25,7 @@ class CreateNaverUserCase {
     admission_date,
     job_role,
     user_id,
+    projects,
   }: IRequest): Promise<Naver> {
     const naver = await this.naversRepository.create({
       name,
@@ -30,7 +33,9 @@ class CreateNaverUserCase {
       admission_date,
       job_role,
       user_id,
+      projects,
     });
+
     return naver;
   }
 }

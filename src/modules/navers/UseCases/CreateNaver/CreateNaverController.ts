@@ -5,7 +5,15 @@ import CreateNaverUserCase from './CreateNaverUseCase';
 
 class CreateNaverController {
   async handle(request: Request, response: Response): Promise<Response> {
-    const { name, birthdate, admission_date, job_role, user_id } = request.body;
+    const {
+      name,
+      birthdate,
+      admission_date,
+      job_role,
+      projects,
+    } = request.body;
+
+    const { id: user_id } = request.user;
 
     const createNaverUserCase = container.resolve(CreateNaverUserCase);
 
@@ -15,6 +23,7 @@ class CreateNaverController {
       admission_date,
       job_role,
       user_id,
+      projects,
     });
 
     return response.status(201).json(naver);

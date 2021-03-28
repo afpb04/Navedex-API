@@ -12,18 +12,22 @@ class NaversRepository implements INaversRepository {
   }
 
   async create({
+    id,
     name,
     birthdate,
     admission_date,
     job_role,
     user_id,
+    projects,
   }: ICreateNaversDTO): Promise<Naver> {
     const naver = this.repository.create({
+      id,
       name,
       birthdate,
       admission_date,
       job_role,
       user_id,
+      projects,
     });
     await this.repository.save(naver);
 
@@ -35,7 +39,12 @@ class NaversRepository implements INaversRepository {
     return navers;
   }
   async findById(id: string): Promise<Naver> {
-    const naver = await this.repository.findOne(id);
+    const naver = await this.repository.findOne({
+      relations: ['projects'],
+      where: {
+        id,
+      },
+    });
 
     return naver;
   }

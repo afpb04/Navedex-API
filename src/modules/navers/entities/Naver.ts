@@ -1,6 +1,15 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  PrimaryColumn,
+} from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
+import Project from '../../projects/entities/Project';
 import User from '../../users/entities/User';
 
 @Entity('navers')
@@ -26,6 +35,10 @@ class Naver {
   @ManyToOne(() => User, user => user.navers)
   @JoinColumn({ name: 'user_id' })
   user: User;
+
+  @ManyToMany(() => Project, project => project.navers)
+  @JoinTable({ name: 'navers_projects' })
+  projects: Project[];
 
   constructor() {
     if (!this.id) {
