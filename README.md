@@ -125,6 +125,7 @@ RequestBody:
    "birthdate": "1999-05-15",
    "admission_date": "2020-06-12",
    "job_role": "Desenvolvedor",
+   //not obligatory
    "projects": [
      {
        "id": "a41bd44e-bea6-415a-a2bd-d8c3d63cfd2b"
@@ -280,6 +281,7 @@ RequestBody:
 //post
  {
    "name": "project example",
+   //not obligatory
    "navers": [
 		{
       "id": "cb6aff0c-c727-4bc6-9364-55eb749e0a7a"
