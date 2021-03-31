@@ -1,4 +1,4 @@
-#NaveDex
+# NaveDex
 ## About the project
 
 In this API it is possible for a user to register and after authenticating he can register navers and projects and make the relationship between them.
