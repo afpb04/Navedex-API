@@ -400,11 +400,11 @@ status: 200 OK
 ]
 
 ```
-### Delete Naver
+### Delete project
 
 ```json
 //delete
-http://localhost:3333/navers/:projects/delete
+http://localhost:3333/projects/:projects/delete
 
 ```
 Responses:
