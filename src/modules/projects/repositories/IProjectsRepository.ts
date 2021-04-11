@@ -6,6 +6,7 @@ interface IProjectRepository {
   list(user_id: string): Promise<Project[]>;
   findById(id: string): Promise<Project>;
   removeById(id: string): Promise<void>;
+  findByIds(ids: string[]): Promise<Project[]>;
 }
 
 export default IProjectRepository;

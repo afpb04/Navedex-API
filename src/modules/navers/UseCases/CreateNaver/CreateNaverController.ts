@@ -23,7 +23,7 @@ class CreateNaverController {
       admission_date,
       job_role,
       user_id,
-      projects,
+      projects_id: projects,
     });
 
     return response.status(201).json(naver);

@@ -14,6 +14,7 @@ interface INaversRepository {
   list(user_id: string): Promise<Naver[]>;
   findById(id: string): Promise<Naver>;
   deleteById(id: string): Promise<void>;
+  findByIds(ids: string[]): Promise<Naver[]>;
 }
 
 export default INaversRepository;

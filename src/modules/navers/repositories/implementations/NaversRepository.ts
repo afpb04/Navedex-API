@@ -52,6 +52,11 @@ class NaversRepository implements INaversRepository {
     const naver = await this.repository.findOne(id);
     await this.repository.remove(naver);
   }
+
+  async findByIds(ids: string[]): Promise<Naver[]> {
+    const navers = await this.repository.findByIds(ids);
+    return navers;
+  }
 }
 
 export default NaversRepository;

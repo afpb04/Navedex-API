@@ -11,7 +11,7 @@ class CreateProjectController {
     const project = await createProjectUseCase.execute({
       name,
       user_id,
-      navers,
+      navers_id: navers,
     });
 
     return response.status(201).json(project);

@@ -44,6 +44,10 @@ class ProjectsRepository implements IProjectRepository {
     const project = await this.repository.findOne(id);
     await this.repository.remove(project);
   }
+  async findByIds(ids: string[]): Promise<Project[]> {
+    const projects = await this.repository.findByIds(ids);
+    return projects;
+  }
 }
 
 export default ProjectsRepository;
